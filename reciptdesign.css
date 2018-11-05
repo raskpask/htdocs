@@ -1,0 +1,39 @@
+#menu{
+  grid-area: menu;
+}
+#header{
+  grid-area: header;
+}
+#header-center{
+  grid-area: header-center;
+}
+#main{
+  grid-area: main;
+}
+#footer{
+  grid-area: footer;
+}
+.item {
+    background-color: lightblue;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bolder;
+}
+.container{
+  width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas:
+      'header header-center header-center'
+      'menu main .'
+      'menu footer footer';
+    grid-gap: .5em;
+    background-color: blue;
+}
+
+html, body {
+    height: 100%;
+    margin:0;
+}
