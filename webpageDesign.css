@@ -39,7 +39,7 @@
     border-bottom-style: solid;
     border-top-width: thick;
     border-top-style: solid;
-    
+
 
 }
 .itemmainleft {
@@ -118,5 +118,6 @@ p{
 ul.a {
     list-style-type: circle;
     font-size: 20px;
-
+    padding: 10px;
+    margin: 1em;
 }
