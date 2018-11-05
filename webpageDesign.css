@@ -19,7 +19,7 @@
     border-top: 2px black;
 }
 #comments{
-
+    grid-area: comments;
 }
 .itemmenu {
     background-color: lightblue;
@@ -39,6 +39,7 @@
     border-bottom-style: solid;
     border-top-width: thick;
     border-top-style: solid;
+    padding: 10px;
 
 
 }
@@ -50,6 +51,7 @@
     border-bottom-style: solid;
     border-top-width: thick;
     border-top-style: solid;
+    padding: 10px;
 
 }
 .itemhead {
@@ -57,13 +59,21 @@
     font-size: x-large;
     font-weight: bolder;
     text-align: center;
+    font-size: 5vw;
 
 }
 .itemfooter {
     font-size: x-large;
     font-weight: bolder;
-
     background-color: lightblue;
+}
+.itemcomments {
+  font-size: x-large;
+  font-weight: bolder;
+  background-color: white;
+  padding: 10px;
+
+
 }
 
 .container {
@@ -79,23 +89,13 @@
       'menu footer footer';
 }
 
-html, body, div, ul, li {
-    font-family: Verdana, sans-serif;
-    font-size: 20px;
-    font-weight: normal;
-
-    height: 100%;
-
-}
 h1{
   font-family: Verdana, sans-serif;
   display: inline;
-  font-size: 80px;
 }
 h2{
   font-family: Verdana, sans-serif;
   display: inline;
-  margin-top: 30px;
 }
 #homebutton{
   float:left;
