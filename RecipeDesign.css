@@ -106,6 +106,7 @@ ul.a {
         'footer footer'
         'menu menu';
   }
+}
   h1 {
     font-family: Verdana, sans-serif;
     display: inline;
@@ -120,9 +121,8 @@ ul.a {
   h3{
     font-family: Verdana, sans-serif;
     font-weight: bold;
-    display: inline;
-    font-size: 4vw;
-    text-align: center;
+    font-size: 2vw;
+    text-align: left;
   }
   h4 {
     text-align: center;
