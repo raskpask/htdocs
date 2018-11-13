@@ -69,16 +69,31 @@
     </div>
     <div class="itemcomments" id="comments">
       <h2> Comments </h2>
-      <p>Maja: Best Panncakes!</p>
-      <p>Berit: Nice recipe!</p>
-      <p>Kalle: Best Panncakes ever!</p>
-      <p>Oskar: Best Panncakes i've made!</p>
 
-      <form>
-        <h3>Wrtie something about the recipe!</h3>
-        <input type="text" name="Comment" value="Enter comment">
+<?php
+      $filename = fopen('conversation.txt','r');
+      $entries = explode(";\n", file_get_contents($filename));
+      for ($i = count($entries)-1; $i >= 0; $i--){
+        $entry = unserialize($entries[$i]);
+          if($entry instanceof Entry and ! $entry->isDeleted()){
+            echo("<p class='author'>" . $entry->getNickName() . ":</p>");
+            echo("<p class='entry'>");
+            echo(nl2br($entry->getMessage()));
+            echo("</p>");
+            if($entry->getNickName() === $_SESSION[LOGIN_USERNAME]){
+              echo("form action='delete-entry.php'>");
+              echo("<input type='hidden' name='timestamp' value='" . $entry->getTimestamp() . "'/>");
+              echo("<input type='submit' value='Delete'/>");
+              echo("</form>");
+            }
+          }
+      }
+      ?>
+  <h3>Wrtie something about the recipe!</h3>
+      <form action="store-comments-entry.php" method='post'>
+      <textarea id="entry" rows=5 name='message' placeholder="Write your entry here."></textarea>
+      <input type="submit" value"Post" required />
       </form>
-      <button> Comment </button>
     </div>
     <div class="itemfooter" id="footer">
       <h6> This website was made by Jakob Molin. Please contact me through email if you have any complaints: molin.jakob@gmail.com<h6>
