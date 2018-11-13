@@ -64,7 +64,9 @@ img:hover {
   margin-top: 40px;
   border-radius: 10px;
 }
-
+#logoutbutton{
+  float: right;
+}
 p{
   margin: 10px;
   padding: 10px;

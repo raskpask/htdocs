@@ -1,4 +1,9 @@
-<!DOCTYPE>
+<?php
+session_start();
+require_once 'LOGIN_ENTRY.php';
+require_once 'keys.php';
+ ?>
+<!DOCTYPE html>
 <html lang="eng">
 
 <head>
@@ -13,19 +18,21 @@
 
 <body>
   <div class="container">
-    <div class="itemhead" id="header"> <a href="/ReciptSite.html"><img src="img/homepage1.png" alt="Link to homepage" id="homebutton"></a>
+    <div class="itemhead" id="header"> <a href="/Index.php"><img src="img/homepage1.png" alt="Link to homepage" id="homebutton"></a>
       <h1></h1>
-      <a href="/login.html" id="loginbutton"> Login </a>
+      <a href="/login_page.php" id="loginbutton"> Login </a>
     </div>
     <div class="itemmainleft" id="mainleft">
       <h2>Fill the form to login</h2>
-      <p><label for="uname"><b>Username</b></label></p>
-      <p><input type="text" placeholder="Enter Username" name="uname" required></p>
+      <form action="login.php" method="post">
+      <p><label for="username">Username:</label></p>
+      <p><input type="text" id="username" placeholder="Enter Username" name="username" required /></p>
 
-      <p><label for="psw"><b>Password</b></label></p>
-      <p><input type="password" placeholder="Enter Password" name="psw" required></p>
+      <p><label for="password">Password:</label></p>
+      <p><input type="password" id"password" placeholder="Enter Password" name="password" required /></p>
 
-      <p><button type="submit">Login</button>
+      <p><input type="submit" value="Login"/>
+      </form>
         </p>
     </div>
 

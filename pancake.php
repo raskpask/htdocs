@@ -1,3 +1,7 @@
+<?php
+session_start();
+require_once 'keys.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,9 +17,13 @@
 
 <body>
   <div class="container">
-    <div class="itemhead" id="header"> <a href="/ReciptSite.html"><img src="img/homepage1.png" alt="Link to homepage" id="homebutton"></a>
-      <h1>How to make pancakes</h1>
-      <a href="/login.html" id="loginbutton"> Login </a>
+    <div class="itemhead" id="header"><?php
+      if(!empty($_SESSION[LOGIN_USERNAME])){
+      include 'headerWithLogout.php';
+    } else {
+      include 'headerWithLogin.php';
+    }
+      ?>
     </div>
     <div class="itemmenu" id="menu">
       <h4>Recipes</h4>

@@ -46,7 +46,7 @@
   font-weight: normal;
   text-decoration:none;
 }
-#loginbutton:hover{
+#loginbutton:hover {
   color: grey;
   cursor: pointer;
 }
