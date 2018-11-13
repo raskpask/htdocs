@@ -14,6 +14,6 @@
 </head>
 
 <div> <a href="/Index.php"><img src="img/homepage1.png" alt="Link to homepage" id="homebutton"></a>
-  <h1>How to make pancakes</h1>
+  <h1> Tasty Recipes </h1>
   <a href="/login_page.php" id="loginbutton"> Login </a>
 </div>

@@ -1,7 +1,4 @@
-<?php
-session_start();
-require_once 'keys.php';
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,20 +14,16 @@ require_once 'keys.php';
 
 <body>
   <div class="container">
-    <div class="itemhead" id="header"><?php
-      if(!empty($_SESSION[LOGIN_USERNAME])){
-      include 'headerWithLogout.php';
-    } else {
-      include 'headerWithLogin.php';
-    }
+    <div class="itemhead" id="header"> <?php
+      include 'header.php';
       ?>
     </div>
     <div class="itemmenu" id="menu">
       <h4>Recipes</h4>
       <h4><br>Pancakes</h4>
-      <a href="/pancake.html"><img src="img/panncake.jpg" alt=pancake id="pancake"></a>
+      <a href="/pancake.php"><img src="img/panncake.jpg" alt=pancake id="pancake"></a>
       <h4>Meatballs</h4>
-      <a href="/meatballs.html"><img src="img/kottbullar.jpg" alt=meatballs id="meatballs"></a>
+      <a href="/meatballs.php"><img src="img/kottbullar.jpg" alt=meatballs id="meatballs"></a>
     </div>
     <div class="itemmainright" id="mainright">
       <h2>Accessories to the pancake: </h2>
@@ -46,6 +39,7 @@ require_once 'keys.php';
       <img src="img/pancakeServing.jpg" alt="Serving Sugegstion" id="pancakeServing"></img>
     </div>
     <div class="itemmainleft" id="mainleft">
+      <h5> How to make pancakes</h5>
       <h2>Ingredients (6 Persons):</h2>
       <ul class="a">
         <li>6 eggs</li>
@@ -88,7 +82,7 @@ require_once 'keys.php';
     </div>
     <div class="itemfooter" id="footer">
       <h6> This website was made by Jakob Molin. Please contact me through email if you have any complaints: molin.jakob@gmail.com<h6>
-          <a href="/Calendar.html"><img src="img/calendar.jpg" alt=calendar id="calendarfooter"></a>
+          <a href="/Calendar.php"><img src="img/calendar.jpg" alt=calendar id="calendarfooter"></a>
     </div>
   </div>
 

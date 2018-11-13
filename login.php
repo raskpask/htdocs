@@ -1,28 +1,20 @@
 <?php
-
+session_start();
 require_once 'keys.php';
 
-session_start();
-$userN = $_SESSION[LOGIN_USERNAME] = $_POST['username'];
-$passW = $_SESSION[LOGIN_PASSWORD] = $_POST['password'];
+
 $file =   fopen('Users.txt','r');
 
 
 while(!feof($file)){
     $line = fgets($file);
-    list($user, $password) = explode(' ', $line);
-    if(trim($user) == $userN && trim($password) == $passW){
-      $loggedin = true;
+    $credentials = explode(' ', $line);
+    if(trim($credentials[0]) == $_POST[LOGIN_USERNAME] && trim($credentials[1]) ==  $_POST[LOGIN_PASSWORD]){
+      $_SESSION[LOGIN_USERNAME] = $_POST[LOGIN_USERNAME];
+      $_SESSION[LOGIN_PASSWORD] = $_POST[LOGIN_PASSWORD];
+      include 'Index.php';
         break;
-    }
-    else{
-      $loggedin = false;
     }
 }
 fclose($file);
-if(!$loggedin){
-  include 'login_page.php';
-  return;
-}
-include 'Index.php';
- ?>
+?>

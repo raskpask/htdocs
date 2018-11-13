@@ -1,7 +1,4 @@
-<?php
-session_start();
-include 'keys.php';
- ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +14,6 @@ include 'keys.php';
 </head>
 
 <div> <a href="/Index.php"><img src="img/homepage1.png" alt="Link to homepage" id="homebutton"></a>
-  <h1>How to make pancakes</h1>
-  <label for="name" class="headerUser">Welcome <?php  echo $_SESSION[LOGIN_USERNAME]  ?> ! </label>
-  <button><a href="/logout.php" id="logoutbutton"> Logout </a></button>
+  <h1> Tasty Recipes </h1>
+  <a href="/logout.php" id="loginbutton"> Logout </a>
 </div>

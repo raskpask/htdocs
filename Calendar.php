@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,9 +14,10 @@
 <body>
 
     <div class="container">
-      <div class="itemhead" id="header"> <a href="/Index.php"><img src="img/homepage1.png" alt="Link to homepage" id="homebutton"></a>
-        <h2>Calendar</h2>
-        <a href="/login.php" id="loginbutton"> Login </a>
+      <div class="itemhead" id="header"> <?php
+        include 'header.php';
+        ?>
+        <h1>Calendar</h1>
       </div>
       <div class="grid-container">
         <div class="grid-item"></div>
@@ -40,7 +42,7 @@
         <div class="Day">5</div>
         <div class="Day">6</div>
         <div class="Day">7</div>
-        <div class="Day">8 <a href="/meatballs.html"><img src="img/kottbullar.jpg" alt=meatballs class="meatballs"></a> </div>
+        <div class="Day">8 <a href="/meatballs.php"><img src="img/kottbullar.jpg" alt=meatballs class="meatballs"></a> </div>
         <div class="Day">9</div>
         <div class="Day">10</div>
         <div class="Day">11</div>
@@ -74,7 +76,7 @@
       </div>
       <div class="itemfooter" id="footer">
         <h6> This website was made by Jakob Molin. Please contact me through email if you have any complaints: molin.jakob@gmail.com<h6>
-            <a href="/Calendar.html"><img src="img/calendar.jpg" alt=calendar id="calendarfooter"></a>
+            <a href="/Calendar.php"><img src="img/calendar.jpg" alt=calendar id="calendarfooter"></a>
       </div>
     </div>
     </div>
