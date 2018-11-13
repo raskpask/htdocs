@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once 'LOGIN_ENTRY.php';
 require_once 'keys.php';
  ?>
 <!DOCTYPE html>

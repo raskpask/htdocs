@@ -71,17 +71,17 @@
       <h2> Comments </h2>
 
 <?php
-      $filename = fopen('conversation.txt','r');
+      $filename = __DIR__ . '/conversation.txt' ;
       $entries = explode(";\n", file_get_contents($filename));
       for ($i = count($entries)-1; $i >= 0; $i--){
         $entry = unserialize($entries[$i]);
           if($entry instanceof Entry and ! $entry->isDeleted()){
-            echo("<p class='author'>" . $entry->getNickName() . ":</p>");
+            echo("<p class='author'>" . $entry->getUsername() . ":</p>");
             echo("<p class='entry'>");
             echo(nl2br($entry->getMessage()));
             echo("</p>");
-            if($entry->getNickName() === $_SESSION[LOGIN_USERNAME]){
-              echo("form action='delete-entry.php'>");
+            if($entry->getUsername() === $_SESSION[LOGIN_USERNAME]){
+              echo("<form action='delete-entry.php'>");
               echo("<input type='hidden' name='timestamp' value='" . $entry->getTimestamp() . "'/>");
               echo("<input type='submit' value='Delete'/>");
               echo("</form>");
@@ -90,10 +90,12 @@
       }
       ?>
   <h3>Wrtie something about the recipe!</h3>
-      <form action="store-comments-entry.php" method='post'>
-      <textarea id="entry" rows=5 name='message' placeholder="Write your entry here."></textarea>
-      <input type="submit" value"Post" required />
-      </form>
+  <form action="STORE_ENTRY.php" method="post">
+  <p><label for="message">Comment:</label></p>
+  <p><input type="text" id="message" rows=3 placeholder="Enter comment" name="message" required /></p>
+
+  <p><input type="submit" value="Send"/>
+  </form>
     </div>
     <div class="itemfooter" id="footer">
       <h6> This website was made by Jakob Molin. Please contact me through email if you have any complaints: molin.jakob@gmail.com<h6>

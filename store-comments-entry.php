@@ -1,5 +1,6 @@
 <?php
-require_once 'comments-Entry.php';
+
+require_once 'commentsEntry.php';
 require_once 'keys.php';
 
 $filename = __DIR__ . '/conversation.txt';

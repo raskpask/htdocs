@@ -1,6 +1,9 @@
 <?php
 define('LOGIN_USERNAME','username');
 define('LOGIN_PASSWORD','password');
-define('LOGIN_DELIMITER', ";\n");
+define('CHAT_ENTRY_DELIMITER', ";\n");
 define('ISLOGGEDIN', 'loggedin');
+define('CHAT_TIMESTAMP_KEY','timestamp');
+define('CHAT_MESSAGE_KEY','message');
+
 ?>
