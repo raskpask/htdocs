@@ -79,7 +79,6 @@
   <form action="STORE_ENTRY.php" method="post">
   <p><label for="message">Comment:</label></p>
   <p><input type="text" id="message" rows=3 placeholder="Enter comment" name="message" required /></p>
-
   <p><input type="submit" value="Send"/>
   </form>
 </div>

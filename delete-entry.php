@@ -2,7 +2,6 @@
 require_once 'keys.php';
 require_once 'Entry.php';
 
-session_start();
 if (!empty($_GET[CHAT_TIMESTAMP_KEY])) {
 $filename = __DIR__ . '/conversation.txt';
 
