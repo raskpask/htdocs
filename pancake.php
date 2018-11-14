@@ -70,25 +70,11 @@
     <div class="itemcomments" id="comments">
       <h2> Comments </h2>
 
+
 <?php
-      $filename = __DIR__ . '/conversation.txt' ;
-      $entries = explode(";\n", file_get_contents($filename));
-      for ($i = count($entries)-1; $i >= 0; $i--){
-        $entry = unserialize($entries[$i]);
-          if($entry instanceof Entry and ! $entry->isDeleted()){
-            echo("<p class='author'>" . $entry->getUsername() . ":</p>");
-            echo("<p class='entry'>");
-            echo(nl2br($entry->getMessage()));
-            echo("</p>");
-            if($entry->getUsername() === $_SESSION[LOGIN_USERNAME]){
-              echo("<form action='delete-entry.php'>");
-              echo("<input type='hidden' name='timestamp' value='" . $entry->getTimestamp() . "'/>");
-              echo("<input type='submit' value='Delete'/>");
-              echo("</form>");
-            }
-          }
-      }
-      ?>
+    include 'viewComments.php';
+?>
+
   <h3>Wrtie something about the recipe!</h3>
   <form action="STORE_ENTRY.php" method="post">
   <p><label for="message">Comment:</label></p>
@@ -96,7 +82,7 @@
 
   <p><input type="submit" value="Send"/>
   </form>
-    </div>
+</div>
     <div class="itemfooter" id="footer">
       <h6> This website was made by Jakob Molin. Please contact me through email if you have any complaints: molin.jakob@gmail.com<h6>
           <a href="/Calendar.php"><img src="img/calendar.jpg" alt=calendar id="calendarfooter"></a>

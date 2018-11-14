@@ -7,29 +7,22 @@
   <title>Calendar</title>
   <link rel="icon" href="Muffin.ico">
   <link rel="stylesheet" type="text/css" href="mainDesign.css" />
-  <link rel="stylesheet" type="text/css" href="CalendarDesign.css">
-
+  <link rel="stylesheet" type="text/css" href="CalendarDesign.css"/>
 </head>
 
 <body>
 
-    <div class="container">
+
       <div class="itemhead" id="header"> <?php
         include 'header.php';
         ?>
-        <h1>Calendar</h1>
       </div>
-      <div class="grid-container">
-        <div class="grid-item"></div>
-        <div class="Weekday">Monday</div>
-        <div class="Weekday">Tuesday</div>
-        <div class="Weekday">Wednesday</div>
-        <div class="Weekday">Thursday </div>
-        <div class="Weekday">Friday</div>
-        <div class="Weekday">Saturday</div>
-        <div class="Weekday">Sunday</div>
+      <div class="itemmainleft" id="main">
+      <h5>Calendar November 2018</h5>
+    </div>
 
-        <div class="Week">Week 44</div>
+      <div class="flex-container" id="flex-container">
+
         <div class="Day"> <small>29</small> </div>
         <div class="Day"> <small>30</small> </div>
         <div class="Day"> <small>31</small> </div>
@@ -38,7 +31,6 @@
         <div class="Day">3</div>
         <div class="Day">4</div>
 
-        <div class="Week">Week 45</div>
         <div class="Day">5</div>
         <div class="Day">6</div>
         <div class="Day">7</div>
@@ -47,7 +39,7 @@
         <div class="Day">10</div>
         <div class="Day">11</div>
 
-        <div class="Week">Week 46</div>
+
         <div class="Day">12</div>
         <div class="Day">13</div>
         <div class="Day">14</div>
@@ -56,7 +48,6 @@
         <div class="Day">17</div>
         <div class="Day">18</div>
 
-        <div class="Week">Week 47</div>
         <div class="Day">19</div>
         <div class="Day">20</div>
         <div class="Day">21</div>
@@ -65,7 +56,6 @@
         <div class="Day">24</div>
         <div class="Day">25</div>
 
-        <div class="Week">Week 48</div>
         <div class="Day">26</div>
         <div class="Day">27</div>
         <div class="Day">28</div>

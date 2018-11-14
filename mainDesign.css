@@ -64,7 +64,10 @@ button:hover {
   color: grey;
   cursor: pointer;
 }
-
+.itemcomments{
+  background-color: white;
+  padding: 10px;
+}
 .itemhead {
   background-color: grey;
   font-weight: bolder;

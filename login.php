@@ -4,19 +4,15 @@ require_once 'keys.php';
 
 $userN = $_POST['username'];
 $passW = $_POST['password'];
-echo "$userN ";
-echo "$passW";
 
 $file =   fopen('Users.txt','r');
 
-while(!feof($file)){
-    $line = fgets($file);
+while($line = fgets($file)){
     $credentials = explode('|', $line);
-    echo "$credentials[0] ";
-    if(trim($credentials[0]) == trim($userN) && trim($credentials[1]) ==  trim($passW)){
+
+    if(trim($credentials[0]) === $userN && trim($credentials[1]) ===  $passW){
       $_SESSION[LOGIN_USERNAME] = $userN;
-      $_SESSION[LOGIN_PASSWORD] = $passW;
-      include 'Index.php';
+      include 'homepage.php';
         break;
     }
 }

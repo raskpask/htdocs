@@ -4,6 +4,7 @@
     font-size: x-large;
     font-weight: bolder;
     padding: 10px;
+    max-height: 400px;
 }
 
 
@@ -12,22 +13,21 @@
     font-size: x-large;
     font-weight: bolder;
     padding: 10px;
+    max-height: 600px;
 }
 
 .itemcomments {
-  font-size: x-large;
   font-weight: bolder;
   background-color: white;
-  padding: 10px;
-
-
+  padding: 0px;
 }
-
+.comments{
+  max-height: 50%;
+}
 .container {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 1fr 13fr 8fr 2fr;
     grid-template-columns: 1fr 3fr 2fr;
     grid-template-areas:
       'header header header'
