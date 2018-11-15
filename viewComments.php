@@ -11,8 +11,8 @@ for ($i = count($entries)-1; $i >= 0; $i--){
       echo("<p class='entry'>");
       echo(($entry->getMessage()));
       echo("</p>");
-      if(!empty($_SESSION[LOGIN_USERNAME])){
-      if($entry->getUsername() === $_SESSION[LOGIN_USERNAME]){
+      if(!empty($_SESSION['LOGIN_USERNAME'])){
+      if($entry->getUsername() === $_SESSION['LOGIN_USERNAME']){
             echo("<form action='delete-entry.php'>");
             echo("<input type='hidden' name='timestamp' value='" .
             $entry->getTimestamp() . "'/>");
