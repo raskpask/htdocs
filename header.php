@@ -1,9 +1,3 @@
-<?php
-if (!(session_status() == PHP_SESSION_ACTIVE)) {
-    session_start();
-}
-include_once 'keys.php';
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,16 +11,18 @@ include_once 'keys.php';
   <link rel="stylesheet" type="text/css" href="mainDesign.css" />
   <link rel="stylesheet" type="text/css" href="RecipeDesign.css" />
 </head>
-<?php if(!empty($_SESSION[LOGIN_USERNAME])){ ?>
-  <div> <a href="/Index.php"><img src="img/homepage1.png" alt="Link to homepage" id="homebutton"></a>
-    <h1> Tasty Recipes </h1>
-    <a href="/logout.php" id="loginbutton"> Logout </a>
-  </div>
-<?php } else { ?>
-  <div> <a href="/Index.php"><img src="img/homepage1.png" alt="Link to homepage" id="homebutton"></a>
-    <h1> Tasty Recipes </h1>
-    <a href="/login_page.php" id="loginbutton"> Login </a>
-  </div>
-<?php } ?>
+<body>
+<div> <a href="/Index.php"><img src="img/homepage1.png" alt="Link to homepage" id="homebutton"></a>
+  <h1> Tasty Recipes </h1>
+<?php
+if(isset($_SESSION['LOGIN_USERNAME'])){
+echo "<a href='/logout.php' id='loginbutton'> Logout </a>";
+ } else {
+echo "<a href='/login_page.php' id='loginbutton'> Login </a>";
+}
+?>
+</div>
+</body>
+
 
 </html>

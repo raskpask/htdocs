@@ -12,7 +12,7 @@ while(!feof($file)){
     $credentials = explode('|', $line);
     if(trim($credentials[0]) === $userN && trim($credentials[1]) ===  $passW){
       $_SESSION[LOGIN_USERNAME] = $userN;
-      include 'Index.php';
+      include 'homepage.php';
       fclose($file);
         return;
     }
