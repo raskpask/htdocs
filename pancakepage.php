@@ -14,7 +14,7 @@
 <body>
   <div class="container">
     <div class="itemhead" id="header"> <?php
-      include 'header.php';
+      include 'resourses/fragments/header.php';
       ?>
     </div>
     <div class="itemmenu" id="menu">
@@ -78,16 +78,17 @@
 ?>
 
   <h3>Wrtie something about the recipe!</h3>
-  <form action="STORE_ENTRY.php" method="post">
-  <p><label for="message">Comment:</label></p>
-  <p><input type="text" id="message" rows=3 placeholder="Enter comment" name="message" required /></p>
-  <p><input type="submit" value="Send"/>
-  </form>
+        <form action="STORE_ENTRY.php" method="post">
+            <p><label for="Comment">Comment:</label></p>
+            <p><input type="text" id="username" placeholder="Enter comment" name="message" required /></p>
+            <p><input type="submit" value="Send"/>
+        </form>
 
 </div>
     <div class="itemfooter" id="footer">
-      <h6> This website was made by Jakob Molin. Please contact me through email if you have any complaints: molin.jakob@gmail.com<h6>
-          <a href="/Calendar.php"><img src="img/calendar.jpg" alt=calendar id="calendarfooter"></a>
+      <?php
+        include 'resourses/fragments/footer.php';
+      ?>
     </div>
   </div>
 

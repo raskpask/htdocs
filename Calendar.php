@@ -14,7 +14,7 @@
 
 
       <div class="itemhead" id="header"> <?php
-        include 'header.php';
+        include 'resourses/fragments/header.php';
         ?>
       </div>
       <div class="itemmainleft" id="main">
@@ -65,8 +65,7 @@
         <div class="Day"><small>2</small></div>
       </div>
       <div class="itemfooter" id="footer">
-        <h6> This website was made by Jakob Molin. Please contact me through email if you have any complaints: molin.jakob@gmail.com<h6>
-            <a href="/Calendar.php"><img src="img/calendar.jpg" alt=calendar id="calendarfooter"></a>
+          <?php include 'resourses/fragments/footer.php'; ?>
       </div>
     </div>
     </div>

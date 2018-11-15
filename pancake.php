@@ -1,6 +1,7 @@
 <?php
-
 session_start();
-include 'keys.php';
+$_SESSION[LATEST_RECIPE_PAGE]= "pancake";
+require_once 'keys.php';
 include 'pancakepage.php';
+
 ?>

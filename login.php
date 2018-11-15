@@ -2,8 +2,8 @@
 session_start();
 require_once 'keys.php';
 
-$userN = $_POST['username'];
-$passW = $_POST['password'];
+$userN = $_POST[LOGIN_USERNAME];
+$passW = $_POST[LOGIN_PASSWORD];
 
 $file =   fopen('Users.txt','r');
 

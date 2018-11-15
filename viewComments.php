@@ -1,5 +1,7 @@
 <?php
+
 $filename = __DIR__ . '/conversation.txt' ;
+
 
 $entries = explode(";\n", file_get_contents($filename));
 for ($i = count($entries)-1; $i >= 0; $i--){
