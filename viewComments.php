@@ -1,6 +1,11 @@
 <?php
+require_once 'Entry.php';
 
-$filename = __DIR__ . '/conversation.txt' ;
+if($_SESSION[LATEST_RECIPE_PAGE] == "pancake"){
+    $filename = __DIR__ . '/conversation/pancakeComments.txt' ;
+}else{
+    $filename = __DIR__ . '/conversation/meatballsComments.txt' ;
+}
 
 
 $entries = explode(";\n", file_get_contents($filename));
@@ -13,8 +18,8 @@ for ($i = count($entries)-1; $i >= 0; $i--){
       echo("<p class='entry'>");
       echo(($entry->getMessage()));
       echo("</p>");
-      if(!empty($_SESSION['LOGIN_USERNAME'])){
-      if($entry->getUsername() === $_SESSION['LOGIN_USERNAME']){
+      if(!empty($_SESSION[LOGIN_USERNAME])){
+      if($entry->getUsername() === $_SESSION[LOGIN_USERNAME]){
             echo("<form action='delete-entry.php'>");
             echo("<input type='hidden' name='timestamp' value='" .
             $entry->getTimestamp() . "'/>");

@@ -64,9 +64,6 @@
     <div class="itemcomments" id="comments">
       <h2> Comments </h2>
 
-    <form action="STORE_ENTRY.php" method="post">
-    <p><input type="submit" value="View Comments"/>
-    </form>
 
 <?php
     include 'viewComments.php';

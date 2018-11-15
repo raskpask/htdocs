@@ -1,12 +1,25 @@
 <?php
-require_once 'LOGIN_ENTRY.php';
-require_once 'keys.php';
-$filename = __DIR__ . '/Users/Users.txt';
-session_start();
-$_SESSION[LOGIN_USERNAME] = $_POST[LOGIN_USERNAME];
-$_SESSION[LOGIN_PASSWORD] = $_POST[LOGIN_PASSWORD];
 
-  $entry = new LOGIN_ENTRY($_SESSION[LOGIN_USERNAME], $_SESSION[LOGIN_PASSWORD]);
-  file_put_contents($filename, serialize($entry). LOGIN_DELIMITER, FILE_APPEND);
-include 'Index.php';
- ?>
+session_start();
+require_once 'keys.php';
+
+$userN = $_POST[LOGIN_USERNAME];
+$passW = $_POST[LOGIN_PASSWORD];
+
+$file =   fopen('Users.txt','r');
+
+while(!feof($file)){
+    $line = fgets($file);
+    $credentials = explode('|', $line);
+    if(trim($credentials[0]) === $userN && trim($credentials[1]) ===  $passW){
+      $_SESSION[LOGIN_USERNAME] = $userN;
+      include 'homepage.php';
+      fclose($file);
+        return;
+    }
+}
+echo "Wrong username or password!";
+session_destroy();
+include 'login_page.php';
+
+?>

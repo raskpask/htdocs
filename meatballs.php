@@ -1,6 +1,7 @@
 <?php
 session_start();
-$_SESSION['LATEST_RECIPE_PAGE']= 'meatballs';
-include 'keys.php';
+require_once 'keys.php';
+$_SESSION[LATEST_RECIPE_PAGE]= "meatballs";
+
 include 'meatballspage.php';
  ?>

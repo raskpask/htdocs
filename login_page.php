@@ -11,18 +11,17 @@ require_once 'keys.php';
   <link rel="icon" href="img/Muffin.ico">
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="mainDesign.css" />
-
-  <link rel="stylesheet" type="text/css" href="LoginDesign.css" />
+    <link rel="stylesheet" type="text/css" href="LoginDesign.css" />
 </head>
 
 <body>
   <div class="container">
-    <div class="itemhead" id="header"> <a href="/Index.php"><img src="img/homepage1.png" alt="Link to homepage" id="homebutton"></a>
-      <h1></h1>
-      <a href="/login_page.php" id="loginbutton"> Login </a>
+    <div class="itemhead" id="header">
+        <?php include 'resourses/fragments/header.php' ?>
     </div>
+
     <div class="itemmainleft" id="mainleft">
-      <h2>Fill the form to login</h2>
+      <h2>Fill the form to Login</h2>
       <form action="login.php" method="post">
       <p><label for="username">Username:</label></p>
       <p><input type="text" id="username" placeholder="Enter Username" name="username" required /></p>
@@ -37,8 +36,7 @@ require_once 'keys.php';
 
 
     <div class="itemfooter" id="footer">
-      <h6> This website was made by Jakob Molin. Please contact me through email if you have any complaints: molin.jakob@gmail.com<h6>
-          <a href="/Calendar.html"><img src="img/calendar.jpg" alt=calendar id="calendarfooter"></a>
+        <?php include 'resourses/fragments/footer.php' ?>
     </div>
   </div>
 

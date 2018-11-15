@@ -4,7 +4,7 @@ require_once 'Entry.php';
 session_start();
 if (!empty($_GET[CHAT_TIMESTAMP_KEY])) {
   if($_SESSION[LATEST_RECIPE_PAGE] == "pancake"){
-    $filename = __DIR__ . '/conversation.txt' ;
+    $filename = __DIR__ . '/conversation/pancakeComments.txt' ;
   }else{
     $filename = __DIR__ . '/conversation/meatballsComments.txt' ;
   }
@@ -18,6 +18,11 @@ for ($i = count($entries) - 1; $i >= 0; $i--) {
         }
       }
         file_put_contents($filename, implode(CHAT_ENTRY_DELIMITER, $entries));
-    include 'pancakepage.php';
+    if($_SESSION[LATEST_RECIPE_PAGE] == "pancake"){
+        include 'pancakepage.php';
+    }else{
+        include 'meatballspage.php';
+    }
+
   }
  ?>
