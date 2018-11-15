@@ -26,7 +26,8 @@
       <a href="/meatballs.php"><img src="img/kottbullar.jpg" alt=meatballs id="meatballs"></a>
     </div>
     <div class="itemmainright" id="mainright">
-      <h2> This is a school project made in the course ID1354! </h2>
+        <img src="/img/pancakebackground.png" alt="pancakepicture" id="pancakepicture">
+        <img src="/img/meatballsfront.png" alt="meatballs" id="meatballspicture">
     </div>
     <div class="itemmainleft" id="mainleft">
       <h2> This website contains swedish recipes!</h2>
