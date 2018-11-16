@@ -1,3 +1,6 @@
+<?php
+$xml=simplexml_load_file("recipe.xml");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,46 +28,24 @@
       <a href="/meatballs.php"><img src="img/kottbullar.jpg" alt=meatballs id="meatballs"></a>
     </div>
     <div class="itemmainright" id="mainright">
-      <h2>Accessories to the pancake: </h2>
-      <ul class="a">
-        <li>Jam</li>
-        <li>Suger</li>
-        <li>Ice cream</li>
-        <li>Whipped cream</li>
-        <li>Frozen apple souce</li>
-        <li>Nutella</li>
-        <li>Fruits</li>
-      </ul>
-      <img src="img/pancakeServing.jpg" alt="Serving Sugegstion" id="pancakeServing"></img>
+      <img src="<?php echo $xml->recipe[$_SESSION['RECIPE_NUMBER']]->imagepath ; ?>" alt="Serving Sugegstion" id="pancakeServing"></img>
     </div>
     <div class="itemmainleft" id="mainleft">
-      <h5> How to make pancakes</h5>
-      <h2>Ingredients (6 Persons):</h2>
+      <h5> <?php echo $xml->recipe[$_SESSION['RECIPE_NUMBER']]->title; ?></h5>
+      <h2> <?php echo $xml->recipe[$_SESSION['RECIPE_NUMBER']]->description->li; ?></h2>
       <ul class="a">
-        <li>6 eggs</li>
-        <li>Some salt</li>
-        <li>5dl of flour</li>
-        <li>1l of milk</li>
+          <?php foreach($xml->recipe[$_SESSION['RECIPE_NUMBER']]->ingredient->children() as $ingredient) {
+              echo "<li>$ingredient</li>";
+          }?>
       </ul>
 
-      <h2>Method</h2>
-      <p>
-        1) In a bowl, mix all the ingredients together, breaking up any lumps.
-      </p>
-      <p>
-        2) Add butter to the pan and pour a ladle full of batter for each pancake onto a hot griddle.
-      </p>
-      <p>
-        3) Flip the pancakes when the edges appear cooked and the batter bubbles on top.
-      </p>
-      <p>
-        4) Serve immediately.
-      </p>
-      <p>
-        5) Repeat util you don't have any more batter.
-      </p>
-      <p>
-        A serving suggestion can be with banana, nutella and whipped cream.
+      <h2><?php echo $xml->recipe[$_SESSION['RECIPE_NUMBER']]->description->li[1]; ?></h2>
+        <ul class="a">
+            <?php foreach($xml->recipe[$_SESSION['RECIPE_NUMBER']]->recipetext->children() as $recipetext) {
+                echo "<li>$recipetext</li>";
+            }?>
+        </ul>
+
     </div>
     <div class="itemcomments" id="comments">
       <h2> Comments </h2>

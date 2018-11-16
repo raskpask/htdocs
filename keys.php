@@ -8,4 +8,6 @@ define('CHAT_MESSAGE_KEY', 'message');
 define('LATEST_RECIPE_PAGE', 'recipepage');
 define('SIGNUP_USERNAME', 'signup_username');
 define('SIGNUP_PASSWORD', 'signup_password');
+define('RECIPE_NUMBER', 'number');
+
 ?>

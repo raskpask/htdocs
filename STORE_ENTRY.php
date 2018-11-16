@@ -4,10 +4,10 @@ require_once 'keys.php';
 
 session_start();
 
-if($_SESSION[LATEST_RECIPE_PAGE] == "pancake"){
-    $filename = __DIR__ . '/conversation/pancakeComments.txt' ;
-}else{
-    $filename = __DIR__ . '/conversation/meatballsComments.txt' ;
+if ($_SESSION[LATEST_RECIPE_PAGE] == "pancake") {
+    $filename = __DIR__ . '/conversation/pancakeComments.txt';
+} else {
+    $filename = __DIR__ . '/conversation/meatballsComments.txt';
 }
 if (!empty($_POST[CHAT_MESSAGE_KEY])) {
     if (isset($_SESSION[LOGIN_USERNAME])) {
@@ -18,11 +18,5 @@ if (!empty($_POST[CHAT_MESSAGE_KEY])) {
         echo "Please login before posting a comment!";
     }
 }
-
-if($_SESSION[LATEST_RECIPE_PAGE] == "pancake"){
-    include 'pancakepage.php';
-}else{
-    include 'meatballspage.php';
-}
-
+include 'recipepage.php';
 ?>
