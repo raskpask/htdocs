@@ -6,12 +6,12 @@ require_once 'keys.php';
 <html lang="eng">
 
 <head>
-  <link rel="stylesheet" type="text/css" href="reset.css" />
+  <link rel="stylesheet" type="text/css" href="CSS/reset.css" />
   <title>Login</title>
   <link rel="icon" href="img/Muffin.ico">
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="mainDesign.css" />
-    <link rel="stylesheet" type="text/css" href="LoginDesign.css" />
+  <link rel="stylesheet" type="text/css" href="CSS/mainDesign.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/LoginDesign.css" />
 </head>
 
 <body>

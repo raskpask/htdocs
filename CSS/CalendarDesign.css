@@ -10,12 +10,7 @@ background-color: white;
 border-bottom: 2px solid black;
  }
 
-  h1 {
-    font-size: 100px;
-    text-align: center;
-    display: inline;
 
-  }
 h2 {
   text-align: center;
   font-size: 30px;
@@ -90,6 +85,7 @@ img:hover{
 h1 {
   font-family: Verdana, sans-serif;
   display: inline;
+  font-max-size: 30px;
 }
 
 h2 {

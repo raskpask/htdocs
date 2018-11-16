@@ -3,11 +3,11 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" type="text/css" href="reset.css" />
+  <link rel="stylesheet" type="text/css" href="CSS/reset.css" />
   <title>Calendar</title>
   <link rel="icon" href="Muffin.ico">
-  <link rel="stylesheet" type="text/css" href="mainDesign.css" />
-  <link rel="stylesheet" type="text/css" href="CalendarDesign.css"/>
+  <link rel="stylesheet" type="text/css" href="CSS/mainDesign.css" />
+  <link rel="stylesheet" type="text/css" href="CSS/CalendarDesign.css"/>
 </head>
 
 <body>

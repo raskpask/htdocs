@@ -5,13 +5,13 @@ $xml=simplexml_load_file("recipe.xml");
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" type="text/css" href="reset.css" />
+  <link rel="stylesheet" type="text/css" href="CSS/reset.css" />
   <title>Pancakes</title>
   <link rel="icon" href="img/Muffin.ico">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="mainDesign.css" />
-  <link rel="stylesheet" type="text/css" href="RecipeDesign.css" />
+  <link rel="stylesheet" type="text/css" href="CSS/mainDesign.css" />
+  <link rel="stylesheet" type="text/css" href="CSS/RecipeDesign.css" />
 </head>
 
 <body>
