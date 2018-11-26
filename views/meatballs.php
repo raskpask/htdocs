@@ -60,13 +60,12 @@
     <div class="itemcomments" id="comments">
         <h2> Comments </h2>
         <?php
-
         foreach ($entries as $entry) {
-            echo ("<p class='author'>" . $entry->getUsername() . ":</p>");
+            echo("<p class='author'>" . $entry->getUsername() . ":</p>");
             echo("<p class='entry'>");
-            echo(($entry->getMessage()));
-            echo ("</p>");
-            if ($entry->getUsername() == $username) {
+            echo(nl2br($entry->getMessage()));
+            echo("</p>");
+            if ($entry->getUsername() === $username) {
                 echo("<form action='DeleteEntry' method='POST'>");
                 echo("<input type='hidden' name='timestamp' value='" .
                     $entry->getTimestamp() . "'/>");

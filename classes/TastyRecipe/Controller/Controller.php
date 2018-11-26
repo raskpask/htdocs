@@ -50,9 +50,9 @@ class Controller
         return false;
     }
 
-    public function deleteEntry($timestamp)
+    public function deleteEntry($timestamp,$recipe)
     {
-        $this->conversation->deleteEntry($timestamp);
+        $this->conversation->deleteEntry($timestamp,$recipe);
     }
 
     public function signup($username, $password)

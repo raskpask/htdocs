@@ -1,11 +1,13 @@
 <?php
+
 namespace TastyRecipe;
 
 use Id1354fw\View\AbstractRequestHandler;
 use TastyRecipe\Util\Constants;
 use TastyRecipe\Model\Entry;
 
-class DelteEntry extends AbstractRequestHandler{
+class DeleteEntry extends AbstractRequestHandler
+{
 
     private $timestamp;
 
@@ -19,12 +21,25 @@ class DelteEntry extends AbstractRequestHandler{
 
     protected function doExecute()
     {
+        $this->timestamp = $_POST['timestamp'];
         $contr = $this->session->get(Constants::TASTY_CONTR_KEY);
-        $contr->deleteEntry((integer) $this->timestamp);
-        $this->addVariable(Constants::TASTY_ENTRIES_VAR, $contr->getConversation(TRUE));
-        $this->addVariable(Constants::TASTY_USERNAME_VAR, $contr->getUsername());
-        $this->session->set(Constants::TASTY_CONTR_KEY, $contr);
-        return Constants::TASTY_CONVERSATION_VIEW;
+
+
+        if ($this->session->get(Constants::TASTY_RECIPE) == 0) {
+            $contr->deleteEntry((integer)$this->timestamp,0);
+            $this->addVariable(Constants::TASTY_ENTRIES_VAR, $contr->getConversation(0));
+            $this->addVariable(Constants::TASTY_USERNAME_VAR, $contr->getUsername());
+            $this->session->set(Constants::TASTY_CONTR_KEY, $contr);
+            return Constants::TASTY_RECIPE_VIEW;
+        } else
+            $contr->deleteEntry((integer)$this->timestamp,1);
+            $this->addVariable(Constants::TASTY_ENTRIES_VAR, $contr->getConversation(1));
+            $this->addVariable(Constants::TASTY_USERNAME_VAR, $contr->getUsername());
+            $this->session->set(Constants::TASTY_CONTR_KEY, $contr);
+            return Constants::TASTY_MEATBALL_VIEW;
     }
+
+
 }
+
 

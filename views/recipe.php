@@ -1,15 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="../resourses/CSS/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../resourses/CSS/reset.css"/>
     <title>Pancakes</title>
     <link rel="icon" href="../resourses/img/Muffin.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../resourses/CSS/mainDesign.css" />
-    <link rel="stylesheet" type="text/css" href="../resourses/CSS/RecipeDesign.css" />
+    <link rel="stylesheet" type="text/css" href="../resourses/CSS/mainDesign.css"/>
+    <link rel="stylesheet" type="text/css" href="../resourses/CSS/RecipeDesign.css"/>
 </head>
 
 <body>
@@ -52,14 +51,12 @@
         <h2> Comments </h2>
 
         <?php
-
-
         foreach ($entries as $entry) {
-            echo ("<p class='author'>" . $entry->getUsername() . ":</p>");
+            echo("<p class='author'>" . $entry->getUsername() . ":</p>");
             echo("<p class='entry'>");
-            echo(($entry->getMessage()));
-            echo ("</p>");
-            if ($entry->getUsername() == $username) {
+            echo(nl2br($entry->getMessage()));
+            echo("</p>");
+            if ($entry->getUsername() === $username) {
                 echo("<form action='DeleteEntry' method='POST'>");
                 echo("<input type='hidden' name='timestamp' value='" .
                     $entry->getTimestamp() . "'/>");
@@ -71,7 +68,7 @@
         <h3>Wrtie something about the recipe!</h3>
         <form action="StoreEntry" method="post">
             <p><label for="Comment">Comment:</label></p>
-            <p><input type="text" id="username" placeholder="Enter comment" name="message" required /></p>
+            <p><input type="text" id="username" placeholder="Enter comment" name="message" required/></p>
             <p><input type="submit" value="Send"/>
         </form>
 

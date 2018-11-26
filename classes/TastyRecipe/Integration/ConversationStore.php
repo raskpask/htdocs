@@ -34,31 +34,42 @@ class ConversationStore
         } else {
             $filename = 'meatballsComments.txt';
         }
-
         $entries = explode(";\n", file_get_contents($filename));
+        $entriesR;
         for ($i = count($entries) - 1; $i >= 0; $i--) {
             $entry = unserialize($entries[$i]);
+
             if ($entry instanceof Entry and !($entry->isDeleted())) {
-                $entries[$i]=$entry;
+                $entriesR[]=$entry;
             }
         }
-        return $entries;
+        return $entriesR;
     }
 
     /**
      * @return string
      */
-    public function deleteEntry($timestamp)
+    public function deleteEntry($timestamp,$recipe)
     {
-        $file_path = $this->file_path;
-        $entry_delimiter = self::ENTRY_DELIMITER;
-        $this->examineConversation(function (array &$entries, Entry $entry) use ($timestamp, $file_path, $entry_delimiter) {
-            if ($entry->gettTimestamp() === $timestamp) {
-                $entry->setDeleted(true);
+        if ($recipe == 0) {
+            $filename = 'pancakeComments.txt';
+        } else {
+            $filename = 'meatballsComments.txt';
+        }
+
+        $entries = explode(";\n", file_get_contents($filename));
+        for ($i = count($entries) - 1; $i >= 0; $i--) {
+            $entry = unserialize($entries[$i]);
+            if ($entry instanceof Entry and !($entry->isDeleted())) {
+                if(($entry->getTimestamp()== $timestamp)){
+                    $entry->setDeleted(true);
+                }
+                $entries[$i] = serialize($entry);
+
             }
-            \array_push($entries, serialize($entry));
-            file_put_contents($file_path, implode($entry_delimiter, $entries) . $entry_delimiter);
-        });
+        }
+
+        file_put_contents($filename, implode(";\n", $entries));
     }
 
 
