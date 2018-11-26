@@ -19,8 +19,13 @@ class Signup extends AbstractRequestHandler{
     }
     protected function doExecute()
     {
-        $contr = $this->session->get(Constants::TASTY_CONTR_KEY);
-        $contr->signup($_POST['username'], $_POST['password']);
-        return Constants::TASTY_LOGIN_VIEW;
+        $this->session->restart();
+        if(ctype_alnum($_POST['username']) and ctype_print($_POST['password']) and !empty($_POST['username']) and !empty($_POST['password'])) {
+            $contr = $this->session->get(Constants::TASTY_CONTR_KEY);
+            $contr->signup($_POST['username'], $_POST['password']);
+            return Constants::TASTY_LOGIN_VIEW;
+        }
+        echo "Only characters and numbers in username!";
+        return Constants::TASTY_SIGNUPP_VIEW;
     }
 }

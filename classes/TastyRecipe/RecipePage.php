@@ -7,6 +7,7 @@ use TastyRecipe\Util\Constants;
 class RecipePage extends AbstractRequestHandler{
     protected function doExecute()
     {
+        $this->session->restart();
         $contr = $this->session->get(Constants::TASTY_CONTR_KEY);
         $this->session->set((Constants::TASTY_RECIPE),"0");
         $this->addVariable(Constants::TASTY_ISLOGGEDIN,  $this->session->get(TASTY_ISLOGGEDIN));

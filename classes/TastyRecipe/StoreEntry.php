@@ -15,6 +15,11 @@ class StoreEntry extends AbstractRequestHandler{
 
     protected function doExecute()
     {
+        $this->session->restart();
+        if(!empty($_POST['message'])){
+            echo "A message needs to be typed!";
+            return Constants::TASTY_LOGIN_VIEW;
+        }
         $contr = $this->session->get(Constants::TASTY_CONTR_KEY);
         if ($contr->getUsername() !== null) {
             $contr->addEntry(new Entry($contr->getUsername(), $_POST['message']), $this->session->get(Constants::TASTY_RECIPE));

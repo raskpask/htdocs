@@ -21,6 +21,7 @@ class DeleteEntry extends AbstractRequestHandler
 
     protected function doExecute()
     {
+        $this->session->restart();
         $this->timestamp = $_POST['timestamp'];
         $contr = $this->session->get(Constants::TASTY_CONTR_KEY);
 

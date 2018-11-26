@@ -3,6 +3,7 @@
 namespace TastyRecipe\Controller;
 
 use TastyRecipe\Integration\ConversationStore;
+use TastyRecipe\Integration\UserStore;
 use TastyRecipe\Model\Entry;
 use TastyRecipe\Util\Constants;
 use TastyRecipe\Model\Entry_user;
@@ -13,12 +14,13 @@ class Controller
 
     private $conversation;
     private $username;
+    private $users;
 
     public function __construct()
     {
 
         $this->conversation = new ConversationStore();
-
+        $this->users = new UserStore();
     }
 
     public function getUsername()
@@ -38,16 +40,11 @@ class Controller
 
     public function login($username, $password)
     {
-        $filename = 'users.txt' ;
-        $entries = explode(";\n", file_get_contents($filename));
-        for ($i = count($entries)-1; $i >= 0; $i--) {
-            $entry = unserialize($entries[$i]);
-            if ( $entry instanceof Entry_user and (trim($entry->getUsername()) == $username) and (trim($entry->getPassword()) == $password)) {
-               $this->username=$username;
-                return true;
-            }
-        }
-        return false;
+       if($this->users->login($username,$password)){
+       $this->username=$username;
+       return true;
+    }
+    return false;
     }
 
     public function deleteEntry($timestamp,$recipe)
@@ -57,9 +54,7 @@ class Controller
 
     public function signup($username, $password)
     {
-        $filename = 'users.txt';
-        $entry = new Entry_user($username, $password);
-        file_put_contents($filename, serialize($entry) . ";\n",FILE_APPEND);
+        $this->users->storeUser($username,password_hash($password, PASSWORD_DEFAULT));
     }
 
     public function logout(){
