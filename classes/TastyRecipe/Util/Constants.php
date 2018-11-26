@@ -17,6 +17,7 @@ class Constants{
     const CHAT_ENTRY_DELIMITER = ';\n';
     const TASTY_ISLOGGEDIN = 'loggedin';
     const TASTY_RECIPE= 'reciepeNumber';
+    const TASTY_CALENDAR_VIEW= 'calendar';
 
     public static function getViewFragmentsDir(){
         return $_SERVER['DOCUMENT_ROOT'] . Classes::getContextPath() . '/resourses/fragments/';

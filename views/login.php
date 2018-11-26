@@ -31,7 +31,7 @@
     <div class="itemmainleft" id="mainleft">
         <h2> This website contains swedish recipes!</h2>
         <h6> Click on the calendar to find out what to eat on which day! </h6>
-        <a href="/Calendar.php"><img src="../resourses/img/calendar.jpg" alt=calendar id="calendar"></a>
+        <a href="/TastyRecipe/CalendarPage"><img src="../resourses/img/calendar.jpg" alt=calendar id="calendar"></a>
     </div>
     <div class="itemfooter" id="footer">
         <?php include TastyRecipe\Util\Constants::getViewFragmentsDir() . 'footer.php' ?>
