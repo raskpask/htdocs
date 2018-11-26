@@ -18,22 +18,13 @@ class ConversationStore
 
     public function addEntry(Entry $entry, $recipe)
     {
-
-        if ($recipe == 0) {
-            $filename = 'pancakeComments.txt';
-        } else {
-            $filename = 'meatballsComments.txt';
-        }
+        $filename = $this->returnRecipeFilename($recipe);
         file_put_contents($filename, serialize($entry) . ";\n", FILE_APPEND);
     }
 
     public function getConversation($recipe)
     {
-        if ($recipe == 0) {
-            $filename = 'pancakeComments.txt';
-        } else {
-            $filename = 'meatballsComments.txt';
-        }
+        $filename = $this->returnRecipeFilename($recipe);
         $entries = explode(";\n", file_get_contents($filename));
         $entriesR;
         for ($i = count($entries) - 1; $i >= 0; $i--) {
@@ -51,12 +42,7 @@ class ConversationStore
      */
     public function deleteEntry($timestamp,$recipe)
     {
-        if ($recipe == 0) {
-            $filename = 'pancakeComments.txt';
-        } else {
-            $filename = 'meatballsComments.txt';
-        }
-
+        $filename = $this->returnRecipeFilename($recipe);
         $entries = explode(";\n", file_get_contents($filename));
         for ($i = count($entries) - 1; $i >= 0; $i--) {
             $entry = unserialize($entries[$i]);
@@ -70,6 +56,15 @@ class ConversationStore
         }
 
         file_put_contents($filename, implode(";\n", $entries));
+    }
+
+    public function returnRecipeFilename($recipe){
+        if ($recipe == 0) {
+            return 'pancakeComments.txt';
+        } else {
+            return 'meatballsComments.txt';
+        }
+
     }
 
 
