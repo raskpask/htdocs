@@ -30,12 +30,12 @@ class Controller
 
     public function addEntry(Entry $entry,$recipe)
     {
-        $this->conversation->addEntry($entry,$recipe);
+        return $this->users->addEntry($entry,$recipe);
     }
 
     public function getConversation($recipe)
     {
-        return $this->conversation->getConversation($recipe);
+        return $this->users->getConversation($recipe);
     }
 
     public function login($username, $password)
@@ -47,9 +47,9 @@ class Controller
     return false;
     }
 
-    public function deleteEntry($timestamp,$recipe)
+    public function deleteEntry($timestamp)
     {
-        $this->conversation->deleteEntry($timestamp,$recipe);
+        $this->users->deleteEntry($timestamp);
     }
 
     public function signup($username, $password)

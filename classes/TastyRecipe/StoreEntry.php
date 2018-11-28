@@ -16,13 +16,17 @@ class StoreEntry extends AbstractRequestHandler{
     protected function doExecute()
     {
         $this->session->restart();
-        if(!empty($_POST['message'])){
+        if(empty($_POST['message'])){
             echo "A message needs to be typed!";
             return Constants::TASTY_LOGIN_VIEW;
         }
         $contr = $this->session->get(Constants::TASTY_CONTR_KEY);
         if ($contr->getUsername() !== null) {
-            $contr->addEntry(new Entry($contr->getUsername(), $_POST['message']), $this->session->get(Constants::TASTY_RECIPE));
+            if($contr->addEntry(new Entry($contr->getUsername(), $_POST['message']), $this->session->get(Constants::TASTY_RECIPE))){
+                echo "Your comment was added to the website!";
+            } else {
+                echo "Your comments was not added to the website!";
+            }
             $this->addVariable(Constants::TASTY_USERNAME_VAR, $contr->getUsername());
             $this->session->set(Constants::TASTY_CONTR_KEY, $contr);
             if ($this->session->get(Constants::TASTY_RECIPE) == 0) {

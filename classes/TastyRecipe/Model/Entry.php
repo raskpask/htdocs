@@ -30,5 +30,8 @@ class Entry{
   public function setDeleted($deleted){
     $this->deleted= $deleted;
   }
+  public function setTimestamp($timestamp){
+    $this->timestamp=$timestamp;
+  }
 }
  ?>
