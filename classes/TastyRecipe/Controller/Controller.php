@@ -54,7 +54,7 @@ class Controller
 
     public function signup($username, $password)
     {
-        $this->users->storeUser($username,password_hash($password, PASSWORD_DEFAULT));
+        return $this->users->storeUser($username,password_hash($password, PASSWORD_DEFAULT));
     }
 
     public function logout(){
