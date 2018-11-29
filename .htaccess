@@ -11,9 +11,6 @@ Header set Cache-Control "max-age=3600, public, must-revalidate"
 </IfModule>
 </FilesMatch>
 
-<ifModule mod_headers.c>
-Headers set Connection keep-alive
-</ifModule>
 
 <IfModule mod_rewrite.c>
 	RewriteEngine on

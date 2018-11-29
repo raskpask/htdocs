@@ -5,6 +5,7 @@ namespace TastyRecipe\Controller;
 use TastyRecipe\Integration\ConversationStore;
 use TastyRecipe\Integration\UserStore;
 use TastyRecipe\Model\Entry;
+use TastyRecipe\Model\verifyUser;
 use TastyRecipe\Util\Constants;
 use TastyRecipe\Model\Entry_user;
 
@@ -15,12 +16,14 @@ class Controller
     private $conversation;
     private $username;
     private $users;
+    private $verify;
 
     public function __construct()
     {
 
         $this->conversation = new ConversationStore();
         $this->users = new UserStore();
+        $this->verify = new VerifyUser();
     }
 
     public function getUsername()
@@ -40,7 +43,7 @@ class Controller
 
     public function login($username, $password)
     {
-       if($this->users->login($username,$password)){
+       if($this->verify->verifyUser($username,$password)){
        $this->username=$username;
        return true;
     }

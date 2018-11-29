@@ -36,20 +36,7 @@ class UserStore
         $conn = $this->openConnection();
         $sql = "SELECT username, password FROM user";
         $result = $conn->query($sql);
-        if (mysqli_num_rows($result) > 0) {
-            // output data of each row
-            while ($row = mysqli_fetch_assoc($result)) {
-                if ((trim($row["username"]) == $username)) {
-                    if (password_verify($password, $row['password'])) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
-            }
-        } else {
-            return false;
-        }
+        return $result;
     }
 
 
