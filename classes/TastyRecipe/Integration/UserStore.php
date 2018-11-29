@@ -83,8 +83,6 @@ class UserStore
         $conn = $this->openConnection();
         $sql= "SELECT timestamp,message, isDeleted, user FROM comments WHERE recipe = $recipe";
         $result = $conn->query($sql);
-        $row = mysqli_fetch_assoc($result);
-        mysqli_num_rows($result);
         $entries;
         while ($row = mysqli_fetch_assoc($result)) {
             if(!$row['isDeleted']) {

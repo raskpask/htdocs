@@ -4,6 +4,14 @@ Options All -Indexes
 	deny from all
 </FilesMatch>
 
+
+<FilesMatch "\.(ico|jpg|png|gif|js|css)$">
+<IfModule mod_expires.c>
+Header set Cache-Control "max-age=3600, public, must-revalidate"
+</IfModule>
+</FilesMatch>
+
+
 <IfModule mod_rewrite.c>
 	RewriteEngine on
 
