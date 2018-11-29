@@ -5,16 +5,21 @@ namespace TastyRecipe\Controller;
 use TastyRecipe\Integration\ConversationStore;
 use TastyRecipe\Integration\UserStore;
 use TastyRecipe\Model\Entry;
+use TastyRecipe\Util\Constants;
 use TastyRecipe\Model\Entry_user;
 
 class Controller
 {
 
+
+    private $conversation;
     private $username;
     private $users;
 
     public function __construct()
     {
+
+        $this->conversation = new ConversationStore();
         $this->users = new UserStore();
     }
 
