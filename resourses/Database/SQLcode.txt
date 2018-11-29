@@ -1,9 +1,0 @@
-CREATE TABLE users(
-user_id varchar(256) not null Primary key,
-user_password varchar(256) not null );
-
-CREATE TABLE comments(
-comment_id int(11) not null AUTO_INCREMENT PRIMARY KEY,
-comment_user varchar(256) not null,
-comment_message TEXT not null,
-FOREIGN KEY (comment_user) REFERENCES users(user_id));
