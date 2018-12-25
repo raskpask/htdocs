@@ -1,89 +1,30 @@
-#header {
-  grid-area: header;
+.navbar {
+    grid-area: navbar;
 }
 
-#menu {
-  grid-area: menu;
+.Menu {
+    grid-area: menu;
 }
 
-#mainleft {
-  grid-area: main;
+.main {
+    grid-area: main;
+    padding: 10px;
+
 }
 
-#mainright {
-  grid-area: main2;
+.right {
+    grid-area: right;
 }
 
-#footer {
-  grid-area: footer;
-  border-top: 2px black;
+.footer {
+    grid-area: footer;
 }
 
-#comments {
-  grid-area: comments;
+.grid-container {
+    display: grid;
+    min-height: 100%;
+    grid-template-areas:
+            'navbarr' 'main' 'footer';
+    grid-template-rows: auto 1fr auto;
 }
 
-#calendarfooter {
-  float: right;
-  max-height: 60px;
-  margin: 10px;
-}
-
-#homebutton {
-  float: left;
-  max-height: 40px;
-  object-fit: contain;
-}
-
-#loginbutton {
-  float: right;
-  width: 10vw;
-  max-height: 40px;
-  background-color: lightblue;
-  color: black;
-  margin: 3px;
-  border-radius: 10px;
-  font-weight: normal;
-  text-decoration:none;
-}
-#loginbutton:hover {
-  color: grey;
-  cursor: pointer;
-}
-
-button {
-  background-color: lightblue;
-  padding: 7px;
-  margin: 5px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 10px;
-}
-
-button:hover {
-  color: grey;
-  cursor: pointer;
-}
-.itemcomments{
-  background-color: white;
-  padding: 10px;
-}
-.itemhead {
-  background-color: grey;
-  font-weight: bolder;
-  text-align: center;
-  font-size: 2.5vw;
-  max-height: 40px;
-}
-
-.itemfooter {
-  font-size: x-large;
-  font-weight: bolder;
-  background-color: lightblue;
-}
-
-.itemmenu {
-  background-color: lightblue;
-  font-size: x-large;
-  font-weight: bolder;
-}

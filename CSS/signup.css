@@ -1,0 +1,96 @@
+h2{
+    font-weight: bold;
+    font-size: 4vw;
+    text-align: center;
+}
+p{
+    font-size: 2vw;
+    text-align: center;
+    padding: 30px;
+}
+.signupform{
+    text-align: center;
+    align-content: center;
+
+}
+.registerbtn {
+    background-color: #bf6900;
+    color: white;
+    padding: 16px 20px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity:1;
+}
+
+
+#result {
+    width: 100%; /* Full-width */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-size: 18px; /* Increase font-size */
+}
+#result td, #result th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#result tr:nth-child(even){background-color: #f2f2f2;}
+
+#result tr:hover {background-color: #ddd;}
+
+#result th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #bf6900;
+    color: white;
+}
+div.mobileForm{
+    display:none;
+}
+.btn-group button {
+    background-color: #bf6900; /* Green background */
+    border: none;
+    border-right: 1px solid #00fafa;
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    margin: 0px;
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.btn-group button:hover {
+    background-color: #bf6900;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    color: black;
+}
+#result{
+    border: none;
+}
+#resultTable{
+    width: 100%;
+    margin-top: 15px;
+}
+@media only screen and (max-width: 600px) {
+    div.mobileForm{
+        display:block;
+    }
+    div.computerForm{
+        display:none;
+    }
+
+}

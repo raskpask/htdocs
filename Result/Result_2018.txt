@@ -1,0 +1,109 @@
+'<table id="resultTable">\n' +
+            '  <tr>\n' +
+            '    <th>Namn</th>\n' +
+            '    <th>Start</th>\n' +
+            '    <th>Mål</th>\n' +
+            '    <th>Plats</th>\n' +
+            '  </tr>\n' +
+
+            '  <tr>\n' +
+            '    <td>Fredrik S</td>\n' +
+            '    <td>11:00</td>\n' +
+            '    <td>12:39:00</td>\n' +
+            '    <td>1</td>\n' +
+            '  </tr>\n' +
+
+            '  <tr>\n' +
+            '    <td>Johan</td>\n' +
+            '    <td>11:00</td>\n' +
+            '    <td>12:50:00</td>\n' +
+            '    <td>2</td>\n' +
+            '  </tr>\n' +
+
+            '  <tr>\n' +
+            '    <td>Anna</td>\n' +
+            '    <td>11:00</td>\n' +
+            '    <td>12:50:30</td>\n' +
+            '    <td>3</td>\n' +
+            '  </tr>\n' +
+
+            '  <tr>\n' +
+            '    <td>Pelle</td>\n' +
+            '    <td>11:00</td>\n' +
+            '    <td>12:54:30</td>\n' +
+            '    <td>4</td>\n' +
+            '  </tr>\n' +
+
+            '  <tr>\n' +
+            '    <td>Ulla</td>\n' +
+            '    <td>11:00</td>\n' +
+            '    <td>12:55:00</td>\n' +
+            '    <td>5</td>\n' +
+            '  </tr>\n' +
+
+            '  <tr>\n' +
+            '    <td>Annika</td>\n' +
+            '    <td>11:00</td>\n' +
+            '    <td>12:57:00</td>\n' +
+            '    <td>6</td>\n' +
+            '  </tr>\n' +
+
+            '  <tr>\n' +
+            '    <td>Gustav</td>\n' +
+            '    <td>11:00</td>\n' +
+            '    <td>13:00:30</td>\n' +
+            '    <td>7</td>\n' +
+            '  </tr>\n' +
+
+            '  <tr>\n' +
+            '    <td>Pär</td>\n' +
+            '    <td>11:00</td>\n' +
+            '    <td>13:04:00</td>\n' +
+            '    <td>8</td>\n' +
+            '  </tr>\n' +
+
+            '  <tr>\n' +
+            '    <td>Maje</td>\n' +
+            '    <td>11:00</td>\n' +
+            '    <td>13:05:30</td>\n' +
+            '    <td>9</td>\n' +
+            '  </tr>\n' +
+            '</table>' +
+            '');
+
+
+        $("#result").append('<table id="resultTable">\n' +
+            '  <tr>\n' +
+            '    <th>Lag</th>\n' +
+            '    <th>Start</th>\n' +
+            '    <th>Mål</th>\n' +
+            '    <th>Plats</th>\n' +
+            '  </tr>\n' +
+
+            '  <tr>\n' +
+            '    <td>U20</td>\n' +
+            '    <td>11:15</td>\n' +
+            '    <td>13:06:00</td>\n' +
+            '    <td>1</td>\n' +
+            '  </tr>\n' +
+
+            '  <tr>\n' +
+            '    <td>Team Molin</td>\n' +
+            '    <td>11:15</td>\n' +
+            '    <td>13:30:00</td>\n' +
+            '    <td>2</td>\n' +
+            '  </tr>\n' +
+
+            '  <tr>\n' +
+            '    <td>Team Gustavsson</td>\n' +
+            '    <td>11:15</td>\n' +
+            '    <td>13:38:00</td>\n' +
+            '    <td>3</td>\n' +
+            '  </tr>\n' +
+
+            '  <tr>\n' +
+            '    <td>Team Fredstam</td>\n' +
+            '    <td>11:15</td>\n' +
+            '    <td>-</td>\n' +
+            '    <td>4</td>\n' +
+            '  </tr>\n'
